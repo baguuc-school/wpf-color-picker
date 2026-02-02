@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="Cornsilk">
+        <Rectangle Height="78" Margin="50,25,50,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Label Content="Dobierz kolor suwakami i zapisz przyciskiem:" HorizontalAlignment="Left" Margin="50,137,0,0" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="640" Maximum="255"/>
+        <Label Content="R" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.191"/>
+        <Grid Background="Cornsilk">
+            <Rectangle Height="78" Margin="50,25,50,0" Stroke="Black" VerticalAlignment="Top" Fill="White"/>
+            <Label Content="Dobierz kolor suwakami i zapisz przyciskiem:" HorizontalAlignment="Left" Margin="50,137,0,0" VerticalAlignment="Top"/>
+            <Slider x:Name="RValueSlider" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Width="640" Maximum="255" Value="255"/>
+            <Label x:Name="RValueLabel" Content="..." HorizontalAlignment="Left" Margin="732,178,0,0" VerticalAlignment="Top"/>
+            <Label Content="R" HorizontalAlignment="Left" Margin="50,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.191"/>
+            <Slider x:Name="GValueSlider" HorizontalAlignment="Center" Margin="0,228,0,0" VerticalAlignment="Top" Width="640" Maximum="255" Value="255"/>
+            <Label x:Name="GValueLabel" Content="..." HorizontalAlignment="Left" Margin="732,224,0,0" VerticalAlignment="Top"/>
+            <Label Content="G" HorizontalAlignment="Left" Margin="50,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.191"/>
+            <Slider x:Name="BValueSlider" HorizontalAlignment="Center" Margin="0,271,0,0" VerticalAlignment="Top" Width="640" Maximum="255" Value="255"/>
+            <Label x:Name="BValueLabel" Content="..." HorizontalAlignment="Left" Margin="732,267,0,0" VerticalAlignment="Top"/>
+            <Label Content="B" HorizontalAlignment="Left" Margin="50,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-0.191"/>
+            <Button x:Name="UpdateButton" Content="Pobierz" Margin="325,309,325,0" VerticalAlignment="Top" Background="Peru" RenderTransformOrigin="0.5,0.5" Height="30">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.114"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Label x:Name="TotalValueLabel" Content="255, 255, 255" Margin="325,364,325,0" VerticalAlignment="Top" Background="White"/>
+
+        </Grid>
 
     </Grid>
 </Window>
