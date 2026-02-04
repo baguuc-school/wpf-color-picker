@@ -37,25 +37,43 @@ namespace WPFColorPicker
 
         private void RValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if(RValueLabel != null)
+            if(RValueLabel != null && GValueLabel != null && BValueLabel != null)
             {
                 RValueLabel.Content = ((int)RValueSlider.Value).ToString();
+
+                byte rValue = ((byte)this.RValueSlider.Value);
+                byte gValue = ((byte)this.GValueSlider.Value);
+                byte bValue = ((byte)this.BValueSlider.Value);
+                Color newColor = Color.FromRgb(rValue, gValue, bValue);
+                this.ColorShowcaseBox.Fill = new SolidColorBrush(newColor);
             }
         }
 
         private void GValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (GValueLabel != null)
+            if (RValueLabel != null && GValueLabel != null && BValueLabel != null)
             {
                 GValueLabel.Content = ((int)GValueSlider.Value).ToString();
+
+                byte rValue = ((byte)this.RValueSlider.Value);
+                byte gValue = ((byte)this.GValueSlider.Value);
+                byte bValue = ((byte)this.BValueSlider.Value);
+                Color newColor = Color.FromRgb(rValue, gValue, bValue);
+                this.ColorShowcaseBox.Fill = new SolidColorBrush(newColor);
             }
         }
 
         private void BValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (BValueLabel != null)
+            if (RValueLabel != null && GValueLabel != null && BValueLabel != null)
             {
                 BValueLabel.Content = ((int)BValueSlider.Value).ToString();
+
+                byte rValue = ((byte)this.RValueSlider.Value);
+                byte gValue = ((byte)this.GValueSlider.Value);
+                byte bValue = ((byte)this.BValueSlider.Value);
+                Color newColor = Color.FromRgb(rValue, gValue, bValue);
+                this.ColorShowcaseBox.Fill = new SolidColorBrush(newColor);
             }
         }
     }
