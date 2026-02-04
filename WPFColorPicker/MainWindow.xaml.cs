@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,14 +12,51 @@ using System.Windows.Shapes;
 
 namespace WPFColorPicker
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            byte rValue = ((byte)this.RValueSlider.Value);
+            byte gValue = ((byte)this.GValueSlider.Value);
+            byte bValue = ((byte)this.BValueSlider.Value);
+            Color newColor = Color.FromRgb(rValue, gValue, bValue);
+
+            this.RValueLabel.Content = rValue.ToString();
+            this.GValueLabel.Content = gValue.ToString();
+            this.BValueLabel.Content = bValue.ToString();
+
+            this.TotalValueLabel.Content = $"{rValue.ToString()}, {gValue.ToString()}, {bValue.ToString()}";
+            this.TotalValueLabel.Background = new SolidColorBrush(newColor);
+            this.ColorShowcaseBox.Fill = new SolidColorBrush(newColor);
+        }
+
+        private void RValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(RValueLabel != null)
+            {
+                RValueLabel.Content = ((int)RValueSlider.Value).ToString();
+            }
+        }
+
+        private void GValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (GValueLabel != null)
+            {
+                GValueLabel.Content = ((int)GValueSlider.Value).ToString();
+            }
+        }
+
+        private void BValueSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (BValueLabel != null)
+            {
+                BValueLabel.Content = ((int)BValueSlider.Value).ToString();
+            }
         }
     }
 }
